@@ -19,7 +19,6 @@ const WeatherBox = props => {
       .then((res) => {
         if (res.status === 200) {
           return res.json().then(data => {
-            console.log(data);
             const weatherData2 = {
               city: data.name,
               temp: data.main.temp,
@@ -35,8 +34,7 @@ const WeatherBox = props => {
       });
   }, []);
 
-  console.log('pending', pending)
-  console.log("weatherData:", weatherData);
+
   return (
     <section>
       <PickCity action={handleCityChange} />
